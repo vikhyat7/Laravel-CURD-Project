@@ -1,6 +1,6 @@
 <div>
     <h2>Add Student Form</h2>
-    <form action="" method="post" >
+    <form action="/add" method="post" >
         @csrf
         <input type="text" name="name" placeholder="Enter Name" required><br><br>
         <input type="email" name="email" placeholder="Enter Email" required><br><br>

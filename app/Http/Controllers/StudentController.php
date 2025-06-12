@@ -51,7 +51,10 @@ class StudentController extends Controller
     }
     
     function search(Request $request){
-        $studentData = Student::where('name','like',"%$request->search%")->get();
+        // $studentData = Student::where('name','like',"%$request->search%")->get();
+        $studentData = Student::where('name', 'like', "%{$request->search}%")
+        ->paginate(10); // Apply pagination before get()
+
         return view('list-student',['students'=>$studentData,'search'=>$request->search]);
     }
 
